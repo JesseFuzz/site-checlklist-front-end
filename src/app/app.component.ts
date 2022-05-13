@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { activity } from './activity';
 
 import {ActivityService} from './activity.service'
@@ -12,7 +12,7 @@ import {ActivityService} from './activity.service'
 export class AppComponent implements OnInit {
   activity: activity[] = []
   form: FormGroup = new FormGroup({
-    description : new FormControl('')
+    description : new FormControl('', [Validators.required, Validators.minLength(3)]) //esse segundo parametro é para array de validadores aula 25
   })
   constructor(private service: ActivityService){}
 

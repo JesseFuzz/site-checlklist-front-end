@@ -5,16 +5,20 @@
 </nav>
 <div class="container mt-4">
     <h3 class="titulo">Serviços do dia: </h3>
+    <h4>adicione as atividades do dia e marque como concluida</h4>
     <hr>
+    <h5 class="description">clique para adicionar clientes e serviços, assim que finalizados, marque-os como "feito"</h5>
     <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="row">
             <div class="col-md-6">
                 <input type="text" class="form-control" formControlName="description"/>
             </div>
             <div class="col-md-3">
-                <button type="submit" class="btn btn-sm btn-primary">adicionar tarefa</button>
+                <button type="submit" [disabled]="!form.get('description')"
+                class="btn btn-sm btn-primary">adicionar tarefa
+                </button>
             </div>
-        </div>
+        </div> 
     </form>
     <hr/>
     <div class="row">
