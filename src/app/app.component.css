@@ -1,0 +1,8 @@
+.done{
+    text-decoration: line-through;
+}
+
+.container-fluid{
+    text-align: center;
+    justify-content: center;
+}
